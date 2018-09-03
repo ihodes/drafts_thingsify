@@ -3,7 +3,8 @@
 Todo list being processed should be in the format:
 
 * Some List | This is the Todo's Title - start date - deadline date
-Notes can be here, but should all be on one line.
+Notes can be here,
+and they can be multiple lines long.
 + checklist items
 + are formatted like so
 - tag1 tag2 tag3
@@ -52,7 +53,7 @@ function processLines (lines) {
 		} else if (line[0] == "-") {
 			// Then we're adding tags
 			todo.tags = line.substring(1).trim().split(' ');
-		} else if (line[0]) {
+		} else {
 			// Then we're adding a note
 			if (!todo.notes)  todo.notes = [];
 			todo.notes.push(line);
