@@ -33,18 +33,18 @@ function processLines (lines) {
 			// Push the last todo, if there is one (all todos have a title)
 			if (todo.title)  todos.push(todo);
 
-			var list, title, date, deadline;
+			var list, title, when, deadline;
 
 			if (line.includes('|')) { 
 				[list, line] = line.split(' | '); 
 			}
 			if (line.includes('-'))  {
-				[title, date, deadline] = line.split(' - ');
+				[title, when, deadline] = line.split(' - ');
 			} else {
 				title = line;
 			}
 
-			todo = {list, title, date, deadline};
+			todo = {list, title, when, deadline};
 		} else if (line[0] == "+") {
 			// Then we're in a checklist
 			if (todo.checklist == undefined)  todo.checklist = [];
